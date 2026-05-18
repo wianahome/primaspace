@@ -1,65 +1,96 @@
-import Image from "next/image";
+// app/page.tsx
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="pt-24">
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center bg-gradient-to-br from-amber-50 to-white">
+        <div className="max-w-7xl mx-auto px-6 py-20">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight max-w-3xl">
+            Desain Interior, Kitchen Set & Booth Pameran{' '}
+            <span className="text-amber-600">Terbaik di Bali</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-6 text-lg text-gray-700 max-w-3xl">
+            PrimaSpace membantu mewujudkan ruang interior dan booth pameran yang elegan,
+            fungsional, dan sesuai anggaran. Kami melayani proyek villa, kantor, retail, serta
+            kitchen set modern dengan layanan desain custom dan eksekusi terpercaya.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+
+          <div className="mt-8 space-y-3 max-w-xl">
+            <div className="flex items-center gap-3">
+              <span className="text-amber-600 text-xl">✓</span>
+              <span className="text-lg">Custom Desain Sesuai Kebutuhan & Anggaran</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-amber-600 text-xl">✓</span>
+              <span className="text-lg">Tim Berpengalaman Lebih dari 10 Tahun</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-amber-600 text-xl">✓</span>
+              <span className="text-lg">Proyek Tepat Waktu & Transparan</span>
+            </div>
+          </div>
+
+          <Link
+            href="https://wa.me/6281234567890?text=Halo%20PrimaSpace,%20saya%20tertarik"
             target="_blank"
-            rel="noopener noreferrer"
+            className="inline-block mt-10 bg-amber-600 hover:bg-amber-700 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            Konsultasi Gratis via WhatsApp →
+          </Link>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section className="py-20 bg-gray-50" aria-label="Portofolio PrimaSpace">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+            Portofolio Unggulan Kami
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Lihat karya terbaik PrimaSpace untuk berbagai proyek di seluruh Bali
+          </p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Card 1 */}
+            <div className="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-2xl transition">
+              <div className="text-5xl mb-4">🏠</div>
+              <h3 className="font-bold text-lg">Desain Interior Villa</h3>
+              <Link href="/desain-interior-bali" className="text-amber-600 text-sm mt-2 inline-block">
+                Lihat Detail →
+              </Link>
+            </div>
+            
+            {/* Card 2 */}
+            <div className="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-2xl transition">
+              <div className="text-5xl mb-4">🍳</div>
+              <h3 className="font-bold text-lg">Kitchen Set Modern</h3>
+              <Link href="/kitchen-set-bali" className="text-amber-600 text-sm mt-2 inline-block">
+                Lihat Detail →
+              </Link>
+            </div>
+            
+            {/* Card 3 */}
+            <div className="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-2xl transition">
+              <div className="text-5xl mb-4">🎪</div>
+              <h3 className="font-bold text-lg">Booth Pameran</h3>
+              <Link href="/booth-pameran-bali" className="text-amber-600 text-sm mt-2 inline-block">
+                Lihat Detail →
+              </Link>
+            </div>
+            
+            {/* Card 4 */}
+            <div className="bg-white rounded-xl p-6 shadow-lg text-center hover:shadow-2xl transition">
+              <div className="text-5xl mb-4">🏢</div>
+              <h3 className="font-bold text-lg">Kantor & Retail</h3>
+              <Link href="/kontraktor-interior-bali" className="text-amber-600 text-sm mt-2 inline-block">
+                Lihat Detail →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
