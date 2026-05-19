@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://primaspace.id/sitemap.xml
+Host: https://primaspace.id
