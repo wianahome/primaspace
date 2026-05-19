@@ -8,6 +8,10 @@ import { WhatsAppFloat } from './components/WhatsAppFloat';
 export const metadata: Metadata = {
   title: 'PrimaSpace | Desain Interior & Kontraktor Interior Bali',
   description: 'PrimaSpace menyediakan jasa desain interior, kitchen set, dan booth pameran terbaik di Bali dengan desain custom dan proyek tepat waktu.',
+  verification: {
+    google: 'Qxmr4nnBZU7ftcrk2al6INyqgabXHNPusSdNAOtjebM', 
+    // Contoh: google: 'Qxmr4nnBZU7ftcrk2al6lNyqgabXHNpusSdNA...'
+  },
   metadataBase: new URL('https://primaspace.id'),
   alternates: {
     canonical: '/',
