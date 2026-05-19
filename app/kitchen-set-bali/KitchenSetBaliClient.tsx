@@ -62,7 +62,7 @@ export function KitchenSetBaliClient() {
                 </p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
                   <Link
-                    href="https://wa.me/6281234567890?text=Halo%20PrimaSpace,%20saya%20mau%20konsultasi%20kitchen%20set%20Denpasar"
+                    href="https://wa.me/628135979589?text=Halo%20PrimaSpace,%20saya%20mau%20konsultasi%20kitchen%20set%20Denpasar"
                     target="_blank"
                     className="inline-flex items-center justify-center rounded-full bg-amber-600 px-7 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-amber-700"
                   >

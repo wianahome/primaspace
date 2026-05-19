@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
 import { WhatsAppFloat } from './components/WhatsAppFloat';
 
 export const metadata: Metadata = {
@@ -44,9 +45,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className="bg-white text-gray-900 min-h-screen">
+      <body className="bg-slate-50 text-slate-950 min-h-screen">
         <Navbar />
         {children}
+        <Footer />
         <WhatsAppFloat />
       </body>
     </html>

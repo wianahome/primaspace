@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { KitchenSetBaliClient } from './KitchenSetBaliClient';
+import { HeroKitchenSet } from '../components/HeroKitchenSet';
+import { PortfolioKitchenSet } from '../components/PortfolioKitchenSet';
 
 export const metadata: Metadata = {
   title: 'Kitchen Set Bali | Kitchen Set Denpasar & Kitchen Set Custom',
@@ -91,6 +93,9 @@ export default function KitchenSetBaliPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      
+      <HeroKitchenSet />
+      <PortfolioKitchenSet />
       <KitchenSetBaliClient />
     </>
   );
