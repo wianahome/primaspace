@@ -1,9 +1,11 @@
 // app/page.tsx
 import Link from 'next/link';
+import HeroHome from './components/HeroHome';
 
 export default function Home() {
   return (
-    <main className="pt-28">
+    <main className="pt-1">
+      <HeroHome />
       <section className="min-h-screen flex items-center bg-[radial-gradient(circle_at_top,_rgba(241,245,249,0.95),_transparent_36%),linear-gradient(180deg,_#f8fafc_0%,_#ffffff_100%)]">
         <div className="max-w-6xl mx-auto px-6 py-24 lg:px-8">
           <div className="rounded-[2rem] border border-slate-200/80 bg-white/90 p-10 shadow-[0_30px_60px_-35px_rgba(15,23,42,0.2)]">
@@ -18,7 +20,7 @@ export default function Home() {
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Link
-                  href="https://wa.me/6281234567890?text=Halo%20PrimaSpace,%20saya%20tertarik"
+                  href="https://wa.me/628135979589?text=Halo%20Prima%20Space,%20Saya%20Mau%20Konsultasi%20tentang%20..."
                   target="_blank"
                   className="inline-flex items-center justify-center rounded-full bg-slate-950 px-8 py-4 text-base font-semibold text-white shadow-[0_20px_40px_-20px_rgba(15,23,42,0.35)] transition-colors hover:bg-slate-800"
                 >

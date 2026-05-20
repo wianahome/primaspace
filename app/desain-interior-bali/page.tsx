@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { InteriorBaliClient } from './InteriorBaliClient';
+import HeroInterior from './HeroInterior';
+import { PortfolioInterior } from './PortofolioInterior';
 
 export const metadata: Metadata = {
   title: 'Desain Interior Bali | Interior Villa, Rumah, Retail & Kantor',
@@ -132,6 +134,8 @@ export default function InteriorBaliPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <HeroInterior />
+      <PortfolioInterior />
       <InteriorBaliClient />
     </>
   );

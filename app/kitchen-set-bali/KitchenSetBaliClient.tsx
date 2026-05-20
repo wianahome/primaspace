@@ -7,17 +7,17 @@ import { Breadcrumb } from '../components/Breadcrumb';
 
 const kitchenGallery = [
   {
-    src: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80',
+    src: 'https://images.unsplash.com/photo-1538944570562-2c9cb7857097?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     alt: 'Kitchen set minimalis Bali dengan lemari putih',
     title: 'Kitchen Set Minimalis Bali',
   },
   {
-    src: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1000&q=80',
+    src: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     alt: 'Dapur modern Denpasar dengan kitchen set custom',
     title: 'Kitchen Set Denpasar',
   },
   {
-    src: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1000&q=80',
+    src: 'https://images.unsplash.com/photo-1590227344930-9e75284f8de9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     alt: 'Kitchen set Bali dengan material kayu alami dan rak terbuka',
     title: 'Kitchen Set Kayu Bali',
   },

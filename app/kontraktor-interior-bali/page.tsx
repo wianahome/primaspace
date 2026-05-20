@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { KontraktorInteriorBaliClient } from './KontraktorInteriorBaliClient';
+import HeroContractor from './HeroKontraktor';
+import { PortfolioContractor } from './PortofolioKontraktor';
 
 export const metadata: Metadata = {
   title: 'Kontraktor Interior Bali | Kontraktor Interior Denpasar & Kantor',
@@ -91,6 +93,8 @@ export default function KontraktorInteriorBaliPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <HeroContractor />
+      <PortfolioContractor />
       <KontraktorInteriorBaliClient />
     </>
   );

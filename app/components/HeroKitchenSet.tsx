@@ -113,25 +113,6 @@ export function HeroKitchenSet({
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Link
-                href="https://wa.me/6281234567890?text=Halo%20PrimaSpace,%20saya%20tertarik%20dengan%20kitchen%20set%20custom%20di%20Bali"
-                target="_blank"
-                className="group inline-flex items-center gap-2 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-              >
-                Konsultasi Kitchen Set Gratis
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              
-              <Link
-                href="#portfolio"
-                className="inline-flex items-center gap-2 border-2 border-amber-600 text-amber-700 hover:bg-amber-50 font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300"
-              >
-                Lihat Portofolio
-              </Link>
-            </div>
-
             {/* Social Proof Mini */}
             <div className="flex items-center gap-6 pt-4 border-t border-gray-200">
               <div className="flex -space-x-2">

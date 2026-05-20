@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { BoothPameranBaliClient } from './BoothPameranBaliClient';
+import HeroBooth from './HeroBooth';
 
 export const metadata: Metadata = {
   title: 'Booth Pameran Bali | Booth Pameran Denpasar & Event Stand',
@@ -91,6 +92,7 @@ export default function BoothPameranBaliPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <HeroBooth />
       <BoothPameranBaliClient />
     </>
   );
