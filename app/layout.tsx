@@ -4,6 +4,7 @@ import './globals.css';
 import { WhatsAppFloat } from './components/WhatsAppFloat';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'PrimaSpace | Desain Interior & Kontraktor Interior Bali',
@@ -50,6 +51,22 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body className="bg-slate-50 text-slate-950 min-h-screen">
+        {/* 1. Muat library gtag.js secara async */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18134268066"
+          strategy="afterInteractive"
+        />
+
+        {/* 2. Inisialisasi Google Tag dataLayer */}
+        <Script id="google-tag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-18134268066');
+          `}
+        </Script>
         <Navbar />
         {children}
         <Footer />
