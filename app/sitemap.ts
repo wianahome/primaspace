@@ -4,11 +4,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://primaspace.id';
 
   const staticRoutes = [
-    '/',
-    '/kitchen-set-bali',
+    '',
+    '/jasa-arsitek-bali',
     '/desain-interior-bali',
-    '/kontraktor-interior-bali',
+    '/kontraktor-bali',
+    '/kontraktor-kolam-renang-bali',
+    '/kitchen-set-bali',
     '/booth-pameran-bali',
+    '/tentang-kami',
+    '/kontak',
     '/blog',
   ];
 
