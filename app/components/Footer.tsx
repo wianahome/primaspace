@@ -53,6 +53,9 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
+                { name: 'Kontraktor Bali', href: '/kontraktor-bali' },
+                { name: 'Kontraktor Kolam Renang Bali', href: '/kontraktor-kolam-renang-bali' },
+                { name: 'Jasa Arsitek Bali', href: '/jasa-arsitek-bali' },
                 { name: 'Desain Interior', href: '/desain-interior-bali' },
                 { name: 'Kontraktor Interior', href: '/kontraktor-interior-bali' },
                 { name: 'Custom Kitchen Set', href: '/kitchen-set-bali' },

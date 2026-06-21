@@ -20,10 +20,13 @@ const menuVariants: Variants = {
 };
 
 const services = [
-  { name: 'Desain Interior', href: '/desain-interior-bali' },
-  { name: 'Kontraktor Interior', href: '/kontraktor-interior-bali' },
-  { name: 'Custom Kitchen Set', href: '/kitchen-set-bali' },
-  { name: 'Booth Pameran', href: '/booth-pameran-bali' },
+  { name: 'Kontraktor Bali', href: '/kontraktor-bali' },
+  { name: 'Kontraktor Kolam Renang Bali', href: '/kontraktor-kolam-renang-bali' },
+                { name: 'Jasa Arsitek Bali', href: '/jasa-arsitek-bali' },
+                { name: 'Desain Interior', href: '/desain-interior-bali' },
+                { name: 'Kontraktor Interior', href: '/kontraktor-interior-bali' },
+                { name: 'Custom Kitchen Set', href: '/kitchen-set-bali' },
+                { name: 'Booth Pameran', href: '/booth-pameran-bali' },
 ];
 
 export default function Navbar() {

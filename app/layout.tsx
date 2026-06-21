@@ -57,7 +57,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
 
-        {/* 2. Inisialisasi Google Tag dataLayer */}
+        {/* 2. Inisialisasi Google Tag dataLayer + Event Snippet */}
         <Script id="google-tag" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -65,6 +65,20 @@ export default function RootLayout({
             gtag('js', new Date());
 
             gtag('config', 'AW-18134268066');
+
+            // Fungsi tambahan untuk melacak konversi klik kontak
+            window.gtag_report_conversion = function(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'conversion', {
+                  'send_to': 'AW-18134268066/d-8ZCI_liKYcEKLxi8dD',
+                  'event_callback': callback
+              });
+              return false;
+            };
           `}
         </Script>
         <Navbar />
