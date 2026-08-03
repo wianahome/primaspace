@@ -89,7 +89,7 @@ export default function Footer() {
                 <div className="space-y-1">
                   <p className="text-[10px] font-bold tracking-wider text-neutral-400 uppercase">Alamat Kantor</p>
                   <p className="text-neutral-300 text-xs font-light leading-relaxed">
-                    Jl. Pura Tegal Gading 5A, Kuta Selatan, Kabupaten Badung, Bali 80363
+                    Jl. Dewi Sartika 2A, Kuta, Badung, Bali
                   </p>
                 </div>
               </div>
