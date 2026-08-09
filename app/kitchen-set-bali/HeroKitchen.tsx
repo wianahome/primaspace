@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from 'next/image';
 import { motion, Variants } from "framer-motion";
 import { ArrowUpRight, Utensils, ArrowLeft, MessageCircle } from "lucide-react";
 import Link from "next/link";
@@ -64,30 +65,36 @@ export default function HeroKitchen() {
             untuk Dapur Mewah Seluruh Bali
           </motion.h1>
 
-          <motion.p 
-            variants={fadeInUp} 
-            className="text-neutral-400 text-lg font-light leading-relaxed max-w-xl mb-12"
+          <motion.p
+            variants={fadeInUp}
+            className="text-neutral-400 text-lg font-light leading-relaxed max-w-xl mb-8"
           >
-            PrimaSpace menghadirkan kitchen set dengan desain kustom, fungsi maksimal, dan material berkualitas. Setiap proyek dirancang untuk mengoptimalkan ruang, alur kerja, dan estetika modern Bali.
+            Kitchen set Bali dan kitchen set Denpasar dari PrimaSpace dibuat kustom untuk mengoptimalkan ruang, alur kerja, dan estetika modern Bali. Kami menawarkan desain fungsional, material berkualitas, dan estimasi RAB cepat untuk proyek rumah, villa, atau properti komersial.
           </motion.p>
-{/* Tombol Aksi (CTA) */}
+          <motion.div variants={fadeInUp} className="mb-10 inline-flex flex-wrap items-center gap-3 rounded-3xl bg-white/5 px-5 py-4 border border-white/10 text-sm text-[#f5f5f3] max-w-xl">
+            <span className="font-semibold text-[#c9a063]">Estimasi Kitchen Set Bali</span>
+            <span>Mulai dari Rp 8.5 jt per meter lari*</span>
+            <span className="rounded-full bg-[#c9a063]/15 px-3 py-1 text-xs uppercase tracking-[0.18em] text-[#c9a063]">Termasuk desain & survey</span>
+          </motion.div>
+
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <Link 
-              href="https://wa.me/628135979589?text=Halo%20Prima%20Space,%20Saya%20Mau%20Konsultasi%20tentang%20..." 
+            <Link
+              href="https://wa.me/628135979589?text=Halo%20PrimaSpace%2C%20saya%20mau%20konsultasi%20kitchen%20set%20Bali%20%28Denpasar%29%20untuk%20estimasi%20RAB%20dan%20survey%20lokasi"
               target="_blank"
               className="group relative flex items-center justify-center gap-3 bg-[#c9a063] hover:bg-[#b08951] text-neutral-900 font-medium px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-[#c9a063]/10"
             >
               <MessageCircle size={18} className="fill-current" />
-              <span>Konsultasi WhatsApp</span>
+              <span>Konsultasi WhatsApp Kitchen Set</span>
               <ArrowUpRight size={16} className="opacity-60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
 
-            <Link 
-              href="/" 
+            <Link
+              href="https://wa.me/628135979589?text=Halo%20PrimaSpace%2C%20saya%20mau%20melihat%20portofolio%20kitchen%20set%20Denpasar"
+              target="_blank"
               className="flex items-center justify-center gap-2 bg-transparent hover:bg-white/5 text-white border border-neutral-800 hover:border-neutral-700 font-medium px-6 py-4 rounded-xl transition-all duration-300"
             >
               <ArrowLeft size={16} className="text-neutral-400" />
-              <span>Kembali ke Beranda</span>
+              <span>Lihat Portofolio (WhatsApp)</span>
             </Link>
           </motion.div>
         </motion.div>
@@ -101,11 +108,14 @@ export default function HeroKitchen() {
         >
           <div className="relative group p-4 bg-[#121212] border border-white/5 rounded-[40px] shadow-2xl">
             <div className="relative aspect-[4/5] rounded-[30px] overflow-hidden">
-              {/* Gambar Dapur - Ganti URL sesuai kebutuhan */}
-              <img 
-                src="https://plus.unsplash.com/premium_photo-1680382578857-c331ead9ed51?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                alt="Luxury Kitchen Bali" 
-                className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+              {/* Gambar Dapur - ganti ke next/image untuk optimasi LCP */}
+              <Image
+                src="https://res.cloudinary.com/dlerwn8af/image/upload/q_auto/f_auto/v1779174871/kitchen-set-custom_pphvgu.png"
+                alt="Luxury Kitchen Bali"
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+                priority
               />
               
               {/* Card Overlay Artistry */}

@@ -47,9 +47,24 @@ export function KitchenSetBaliClient() {
                 <p className="inline-flex items-center rounded-full bg-amber-100 px-4 py-1 text-sm font-semibold text-amber-800">
                   Kitchen Set Denpasar
                 </p>
-                <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-                  Kitchen Set Bali Custom untuk Dapur Denpasar dan Seluruh Pulau Bali
-                </h1>
+
+                {/* Estimasi above-the-fold */}
+                <div className="mt-4 inline-flex items-center gap-4 rounded-lg bg-amber-50 px-4 py-2 text-sm text-amber-800">
+                  <span className="font-semibold">Estimasi mulai dari:</span>
+                  <span className="font-bold">Rp 8.5 jt — Rp 20 jt</span>
+                  <a
+                    href="https://wa.me/628135979589?text=Halo%20PrimaSpace%2C%20saya%20mau%20minta%20estimasi%20RAB%20untuk%20kitchen%20set%20Denpasar.%20Lokasi%3A%20Denpasar&utm_source=google&utm_campaign=KS-Bali"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="ml-4 inline-flex items-center gap-2 rounded-full bg-amber-600 px-3 py-1 text-xs font-semibold text-white hover:bg-amber-700 transition"
+                  >
+                    Minta Estimasi RAB
+                  </a>
+                </div>
+
+                <h2 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+                  kitchen set Bali — kitchen set Denpasar custom untuk Dapur di Seluruh Bali
+                </h2>
                 <p className="mt-6 text-lg leading-8 text-slate-700">
                   PrimaSpace menghadirkan kitchen set Bali dengan desain custom, fungsi maksimal,
                   dan material berkualitas. Cocok untuk dapur rumah, villa, dan properti komersial
@@ -61,19 +76,49 @@ export function KitchenSetBaliClient() {
                   maupun nuansa Bali natural.
                 </p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-                  <Link
-                    href="https://wa.me/628135979589?text=Halo%20PrimaSpace,%20saya%20mau%20konsultasi%20kitchen%20set%20Denpasar"
+                  <a
+                    href={`https://wa.me/628135979589?text=${encodeURIComponent(
+                      'Halo PrimaSpace, saya mau konsultasi kitchen set Denpasar — ingin estimasi & jadwal survey. Lokasi: Denpasar'
+                    )}&utm_source=google&utm_medium=landing&utm_campaign=KS-Bali`}
                     target="_blank"
+                    rel="noreferrer"
                     className="inline-flex items-center justify-center rounded-full bg-amber-600 px-7 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-amber-700"
                   >
                     Konsultasi Kitchen Set
-                  </Link>
-                  <Link
-                    href="/"
+                  </a>
+
+                  <a
+                    href={`https://wa.me/628135979589?text=${encodeURIComponent(
+                      'Halo PrimaSpace, saya mau melihat portofolio kitchen set Denpasar sebelum konsultasi'
+                    )}&utm_source=google&utm_medium=landing&utm_campaign=KS-Bali`}
+                    target="_blank"
+                    rel="noreferrer"
                     className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-7 py-3 text-base font-semibold text-slate-900 transition hover:border-amber-500 hover:text-amber-600"
                   >
-                    Kembali ke Beranda
-                  </Link>
+                    Lihat Portofolio (WhatsApp)
+                  </a>
+                </div>
+                {/* Trust badges */}
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800">Bali-based • Denpasar</span>
+                  <span className="inline-flex items-center gap-2 rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800">Free site survey</span>
+                  <span className="inline-flex items-center gap-2 rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800">Certified craftsmen</span>
+                </div>
+
+                {/* Short testimonials */}
+                <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                  <article className="rounded-2xl bg-white p-4 shadow">
+                    <p className="text-sm text-slate-700">"Pemasangan rapi dan tepat waktu — dapur villa kami terlihat fantastis."</p>
+                    <p className="mt-3 text-xs font-semibold text-slate-900">— Ibu Sari, Seminyak</p>
+                  </article>
+                  <article className="rounded-2xl bg-white p-4 shadow">
+                    <p className="text-sm text-slate-700">"Desain ergonomis yang benar-benar membantu alur masak kami sehari-hari."</p>
+                    <p className="mt-3 text-xs font-semibold text-slate-900">— Budi, Denpasar</p>
+                  </article>
+                  <article className="rounded-2xl bg-white p-4 shadow">
+                    <p className="text-sm text-slate-700">"Estimasi cepat dan harga transparan. Timnya profesional."</p>
+                    <p className="mt-3 text-xs font-semibold text-slate-900">— Nia, Ubud</p>
+                  </article>
                 </div>
               </div>
               <motion.div

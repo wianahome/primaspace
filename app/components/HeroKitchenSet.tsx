@@ -37,12 +37,12 @@ export function HeroKitchenSet({
 
             {/* Main Title with SEO optimization */}
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-4xl font-bold leading-tight">
+              <h2 className="text-4xl md:text-5xl lg:text-4xl font-bold leading-tight">
                 {title.split(':')[0]}
                 <span className="text-gradient block mt-2">
                   | {title.split(':')[1] || 'Transformasi Dapur Impian Anda'}
                 </span>
-              </h1>
+              </h2>
               <p className="text-lg md:text-xl text-gray-600 mt-4 leading-relaxed">
                 {subtitle}
               </p>
@@ -142,7 +142,7 @@ export function HeroKitchenSet({
                 alt="Kitchen Set Modern Bali"
                 fill
                 className="object-cover"
-                priority
+                loading="lazy"
               />
               {/* Overlay Badge */}
               <div className="absolute bottom-4 left-4 bg-white rounded-full p-3 shadow-xl">

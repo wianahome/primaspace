@@ -101,8 +101,8 @@ export default function Footer() {
                 </div>
                 <div className="space-y-1">
                   <p className="text-[10px] font-bold tracking-wider text-neutral-400 uppercase">Hubungi Kami</p>
-                  <p className="text-neutral-300 text-xs font-light">WhatsApp: +62 813-5979-589</p>
-                  <p className="text-neutral-500 text-xs font-light">Email: hello@primaspace.com</p>
+                  <p className="text-neutral-300 text-xs font-light">WhatsApp: <a href="https://wa.me/628135979589?text=Halo%20PrimaSpace,%20Saya%20ingin%20konsultasi" className="text-amber-300 hover:underline">+62 813-5979-589</a></p>
+                  <p className="text-neutral-500 text-xs font-light">Email: <a href="mailto:hello@primaspace.com" className="hover:underline">hello@primaspace.com</a></p>
                 </div>
               </div>
 
@@ -130,6 +130,14 @@ export default function Footer() {
           <div className="flex items-center gap-6 text-neutral-500 text-[11px] font-light">
             <Link href="/tentang-kami" className="hover:text-white transition-colors">Tentang Kami</Link>
             <Link href="/kontak" className="hover:text-white transition-colors">Kontak</Link>
+            <a
+              href="https://wa.me/628135979589?text=Halo%20PrimaSpace,%20Saya%20ingin%20konsultasi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#c9a063] hover:bg-[#b08951] text-[#0a0a0a] px-3 py-2 rounded-lg text-[12px] font-bold transition-all"
+            >
+              Konsultasi (WA)
+            </a>
           </div>
         </div>
 

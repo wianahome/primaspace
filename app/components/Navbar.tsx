@@ -3,6 +3,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, Variants } from 'framer-motion';
 import { ChevronDown, Menu, X, ArrowUpRight } from 'lucide-react';
 
@@ -32,6 +33,18 @@ const services = [
 export default function Navbar() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname() || '/';
+
+  // derive service label from pathname to craft WA message
+  let serviceLabel = 'layanan PrimaSpace';
+  if (pathname.startsWith('/kontraktor-bali')) serviceLabel = 'Kontraktor Bali (bangunan/renovasi)';
+  else if (pathname.startsWith('/kontraktor-interior-bali')) serviceLabel = 'Kontraktor Interior Bali (interior & finishing)';
+  else if (pathname.startsWith('/kontraktor-kolam-renang-bali')) serviceLabel = 'Kontraktor Kolam Renang Bali';
+  else if (pathname.startsWith('/kitchen-set-bali') || pathname.startsWith('/kitchen-set')) serviceLabel = 'Kitchen Set Custom Bali';
+  else if (pathname.startsWith('/booth-pameran-bali')) serviceLabel = 'Booth Pameran Bali';
+
+  const waMessage = `Halo PrimaSpace, saya ingin konsultasi tentang ${serviceLabel}. Bisa dapat info estimasi dan RAB?`;
+  const waHref = `https://wa.me/628135979589?text=${encodeURIComponent(waMessage)}`;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5 h-20 flex items-center">
@@ -92,10 +105,11 @@ export default function Navbar() {
         {/* DESKTOP CONTACT CTA */}
         <div className="hidden md:block">
           <Link 
-            href="/kontak"
-            className="border border-[#c9a063]/30 hover:border-[#c9a063] text-white hover:bg-[#c9a063] hover:text-[#0a0a0a] text-[11px] tracking-widest uppercase font-bold px-5 py-2.5 rounded-lg transition-all duration-300"
+            href={waHref}
+            target="_blank"
+            className="bg-[#c9a063] hover:bg-[#b08951] text-[#0a0a0a] text-[11px] tracking-widest uppercase font-bold px-4 py-2.5 rounded-lg transition-all duration-300 shadow-sm"
           >
-            Contact Us
+            Konsultasi (WA)
           </Link>
         </div>
 
@@ -154,11 +168,12 @@ export default function Navbar() {
           </Link>
 
           <Link 
-            href="/kontak" 
+            href={waHref} 
             onClick={() => setIsMobileMenuOpen(false)}
+            target="_blank"
             className="w-full text-center bg-[#c9a063] text-[#0a0a0a] text-xs tracking-widest uppercase font-bold py-3 rounded-xl block"
           >
-            Contact Us
+            Konsultasi (WA)
           </Link>
         </div>
       )}

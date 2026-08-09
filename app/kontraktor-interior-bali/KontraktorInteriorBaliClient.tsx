@@ -25,7 +25,7 @@ const projectImages = [
 
 export function KontraktorInteriorBaliClient() {
   return (
-    <main className="pt-28 pb-16 bg-slate-50 text-slate-900">
+    <main className="pt-28 pb-16 bg-[#0d1118] text-[#f5f5f3]">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <Breadcrumb
           items={[
@@ -40,27 +40,27 @@ export function KontraktorInteriorBaliClient() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="rounded-[2rem] bg-white/95 border border-slate-200 p-10 shadow-xl"
+            className="rounded-[2rem] bg-[#0f1218]/80 border border-white/5 p-10 shadow-xl"
           >
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-3xl">
-                <p className="inline-flex items-center rounded-full bg-amber-100 px-4 py-1 text-sm font-semibold text-amber-800">
+                <p className="inline-flex items-center rounded-full bg-amber-100/10 px-4 py-1 text-sm font-semibold text-amber-300">
                   Kontraktor Interior Bali
                 </p>
-                <h1 className="mt-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-                  Kontraktor Interior Denpasar untuk Rumah, Kantor, Retail, dan Booth Pameran
+                <h1 className="mt-6 text-4xl font-bold tracking-tight text-[#f5f5f3] sm:text-5xl">
+                  Kontraktor Interior Bali — Denpasar untuk Rumah, Kantor, Retail, dan Booth Pameran
                 </h1>
-                <p className="mt-6 text-lg leading-8 text-slate-700">
+                <p className="mt-6 text-lg leading-8 text-neutral-300">
                   Sebagai kontraktor interior Bali, PrimaSpace menyediakan pengerjaan interior
                   lengkap mulai dari renovasi rumah, pembangunan interior kantor, hingga booth
                   pameran yang menarik.
                 </p>
-                <p className="mt-4 text-lg leading-8 text-slate-700">
+                <p className="mt-4 text-lg leading-8 text-neutral-300">
                   Tim kontraktor interior Denpasar kami mengelola setiap fase proyek dengan
                   profesional: desain, material, produksi, hingga finishing. Hasilnya adalah ruang
                   Bali yang estetis, tahan lama, dan cocok untuk gaya hidup modern.
                 </p>
-                <p className="mt-4 text-lg leading-8 text-slate-700">
+                <p className="mt-4 text-lg leading-8 text-neutral-300">
                   Kami juga menangani interior villa Bali, kitchen set custom, dan area komersial
                   dengan detail rapi serta manajemen proyek yang transparan.
                 </p>
@@ -73,10 +73,11 @@ export function KontraktorInteriorBaliClient() {
                     Konsultasi Kontraktor
                   </Link>
                   <Link
-                    href="/"
-                    className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-7 py-3 text-base font-semibold text-slate-900 transition hover:border-amber-500 hover:text-amber-600"
+                    href="https://wa.me/628135979589?text=Halo%20PrimaSpace,%20Saya%20mau%20minta%20estimasi%20RAB%20kontraktor%20interior%20Bali"
+                    target="_blank"
+                    className="inline-flex items-center justify-center rounded-full border border-white/10 bg-transparent px-7 py-3 text-base font-semibold text-neutral-300 transition hover:border-amber-500 hover:text-amber-300"
                   >
-                    Kembali ke Beranda
+                    Minta Estimasi RAB
                   </Link>
                 </div>
               </div>
@@ -84,13 +85,13 @@ export function KontraktorInteriorBaliClient() {
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative overflow-hidden rounded-[2rem] bg-slate-900/95 p-6 shadow-2xl sm:p-8"
+                className="relative overflow-hidden rounded-[2rem] bg-[#0f1218]/80 p-6 shadow-2xl sm:p-8"
               >
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(251,191,36,0.2),_transparent_35%)]" />
-                <div className="relative rounded-[1.75rem] border border-white/10 bg-slate-950 p-6 text-white">
+                <div className="relative rounded-[1.75rem] border border-white/10 bg-[#0b0c10] p-6 text-white">
                   <p className="text-sm uppercase tracking-[0.3em] text-amber-300">Project Showcase</p>
                   <h2 className="mt-4 text-3xl font-semibold">Karya Kontraktor Interior Bali</h2>
-                  <p className="mt-4 text-sm leading-6 text-slate-300">
+                  <p className="mt-4 text-sm leading-6 text-neutral-300">
                     Proyek kami menampilkan hasil pengerjaan interior Bali profesional dengan detail
                     konstruksi yang solid.
                   </p>
@@ -102,28 +103,24 @@ export function KontraktorInteriorBaliClient() {
       </section>
 
       <section className="mx-auto mt-16 max-w-6xl px-6 lg:px-8">
-        <div className="grid gap-8 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm lg:grid-cols-3">
+        <div className="grid gap-8 rounded-[2rem] border border-white/5 bg-[#0f1218]/60 p-8 shadow-sm lg:grid-cols-3">
           <article className="space-y-5">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-600">Layanan Kontraktor</p>
-            <h2 className="text-3xl font-semibold text-slate-900">Layanan kontraktor interior Bali</h2>
-            <p className="text-slate-600">
-              Kami melayani kontraktor interior Denpasar untuk proyek rumah, kantor, retail,
-              villa, kitchen set, dan booth pameran. Setiap pekerjaan proyek dikerjakan dengan
-              standar tinggi dan pengawasan yang ketat.
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-500">Layanan Kontraktor</p>
+            <h2 className="text-3xl font-semibold text-[#f5f5f3]">Layanan kontraktor interior Bali untuk Denpasar dan sekitarnya</h2>
+            <p className="text-neutral-300">
+              Kami adalah kontraktor interior Bali dan kontraktor interior Denpasar yang menangani proyek rumah, villa, kantor, retail, dan booth pameran. Setiap proyek dikembangkan dengan pemahaman iklim Bali, material lokal, dan kontrol lapangan Bali yang ketat.
             </p>
           </article>
-          <article className="rounded-3xl bg-slate-50 p-6 shadow-inner">
-            <h3 className="text-xl font-semibold text-slate-900">Renovasi interior rumah Bali</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
-              Renovasi interior rumah Bali yang mempertahankan karakter tropis dengan sentuhan
-              modern dan material lokal.
+          <article className="rounded-3xl bg-[#0b0c10] p-6 shadow-inner border border-white/5">
+            <h3 className="text-xl font-semibold text-[#f5f5f3]">Renovasi interior rumah Bali</h3>
+            <p className="mt-3 text-sm leading-6 text-neutral-300">
+              Renovasi interior rumah Bali dengan desain tropis modern, material anti lembap, dan finishing rapi untuk kenyamanan anggota keluarga.
             </p>
           </article>
-          <article className="rounded-3xl bg-slate-50 p-6 shadow-inner">
-            <h3 className="text-xl font-semibold text-slate-900">Interior kantor Denpasar</h3>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
-              Solusi interior kantor Denpasar yang fokus pada produktivitas, branding, dan
-              kenyamanan pegawai.
+          <article className="rounded-3xl bg-[#0b0c10] p-6 shadow-inner border border-white/5">
+            <h3 className="text-xl font-semibold text-[#f5f5f3]">Interior kantor Denpasar</h3>
+            <p className="mt-3 text-sm leading-6 text-neutral-300">
+              Solusi interior kantor Denpasar yang mengutamakan produktivitas, branding, dan pengelolaan bahan bangunan lokal sesuai kondisi tropis Bali.
             </p>
           </article>
         </div>
@@ -138,7 +135,7 @@ export function KontraktorInteriorBaliClient() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.55, delay: index * 0.12 }}
-              className="overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-200"
+              className="overflow-hidden rounded-3xl bg-[#0b0c10] shadow-lg ring-1 ring-white/5"
             >
               <Image
                 src={item.src}
@@ -149,9 +146,9 @@ export function KontraktorInteriorBaliClient() {
                 className="h-72 w-full object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  Proyek interior Bali dengan perpaduan gaya lokal dan desain modern yang kuat.
+                <h3 className="text-xl font-semibold text-[#f5f5f3]">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-neutral-300">
+                  Proyek kontraktor interior rumah Bali, kantor Bali, dan booth pameran Bali dengan finishing rapi dan manajemen bahan yang terkontrol.
                 </p>
               </div>
             </motion.article>
@@ -160,7 +157,7 @@ export function KontraktorInteriorBaliClient() {
       </section>
 
       <section className="mx-auto mt-20 max-w-6xl px-6 lg:px-8">
-        <div className="grid gap-10 rounded-[2rem] border border-slate-200 bg-white p-10 shadow-xl lg:grid-cols-3">
+        <div className="grid gap-10 rounded-[2rem] border border-white/5 bg-[#0f1218]/60 p-10 shadow-xl lg:grid-cols-3">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -168,12 +165,10 @@ export function KontraktorInteriorBaliClient() {
             transition={{ duration: 0.6 }}
             className="space-y-4"
           >
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-600">Keyword Pendukung</p>
-            <h2 className="text-3xl font-semibold text-slate-900">Target keyword kontraktor interior Bali</h2>
-            <p className="text-slate-600">
-              Halaman ini menargetkan keyword seperti kontraktor interior Denpasar, kontraktor
-              interior rumah Bali, kontraktor interior kantor Bali, dan kontraktor booth
-              pameran Bali.
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-500">Layanan Unggulan</p>
+            <h2 className="text-3xl font-semibold text-[#f5f5f3]">Layanan kontraktor interior Bali lengkap</h2>
+            <p className="text-neutral-300">
+              PrimaSpace menyediakan layanan kontraktor interior Bali: konsultasi desain, pengadaan material tahan lembap, produksi furniture custom, instalasi MEP, hingga finishing profesional untuk rumah, villa, kantor, retail, dan booth pameran di Denpasar dan sekitarnya.
             </p>
           </motion.div>
 
@@ -184,18 +179,16 @@ export function KontraktorInteriorBaliClient() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="space-y-5"
           >
-            <div className="rounded-3xl bg-slate-50 p-6">
-              <p className="text-lg font-semibold text-slate-900">Manajemen proyek</p>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                Proyek kami dijalankan dengan timeline jelas, koordinasi lapangan, dan kualitas
-                material yang sesuai spesifikasi.
+            <div className="rounded-3xl bg-[#0b0c10] p-6 border border-white/5">
+              <p className="text-lg font-semibold text-[#f5f5f3]">Manajemen bahan lokal</p>
+              <p className="mt-3 text-sm leading-6 text-neutral-300">
+                Pengelolaan bahan material lokal Bali yang tepat membantu proyek kontraktor interior Bali berjalan efisien dan sesuai kondisi iklim tropis.
               </p>
             </div>
-            <div className="rounded-3xl bg-slate-50 p-6">
-              <p className="text-lg font-semibold text-slate-900">Konstruksi interior</p>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                Kontraktor interior Bali kami menangani pemasangan dinding, plafon, furniture built-in,
-                dan finishing interior secara profesional.
+            <div className="rounded-3xl bg-[#0b0c10] p-6 border border-white/5">
+              <p className="text-lg font-semibold text-[#f5f5f3]">Konstruksi interior</p>
+              <p className="mt-3 text-sm leading-6 text-neutral-300">
+                Kontraktor interior Bali kami menangani pemasangan dinding, plafon, furniture built-in, dan finishing interior secara profesional.
               </p>
             </div>
           </motion.div>
@@ -207,21 +200,59 @@ export function KontraktorInteriorBaliClient() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-5"
           >
-            <div className="rounded-3xl bg-slate-50 p-6">
-              <p className="text-lg font-semibold text-slate-900">Pengawasan kualitas</p>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                Kualitas pengerjaan interior dipastikan dengan supervisi ahli dan kontrol mutu
-                di setiap tahap konstruksi.
+            <div className="rounded-3xl bg-[#0b0c10] p-6 border border-white/5">
+              <p className="text-lg font-semibold text-[#f5f5f3]">Pengawasan kualitas</p>
+              <p className="mt-3 text-sm leading-6 text-neutral-300">
+                Kualitas pengerjaan interior dipastikan dengan supervisi ahli Denpasar dan kontrol mutu lapangan Bali di setiap tahap proyek.
               </p>
             </div>
-            <div className="rounded-3xl bg-slate-50 p-6">
-              <p className="text-lg font-semibold text-slate-900">Budget & estimasi</p>
-              <p className="mt-3 text-sm leading-6 text-slate-600">
-                Setiap kontraktor interior Bali kami siapkan estimasi yang transparan untuk membantu
-                klien merencanakan budget dengan lebih baik.
+            <div className="rounded-3xl bg-[#0b0c10] p-6 border border-white/5">
+              <p className="text-lg font-semibold text-[#f5f5f3]">Budget & estimasi</p>
+              <p className="mt-3 text-sm leading-6 text-neutral-300">
+                Kontraktor interior Bali kami menyiapkan estimasi RAB transparan sehingga Anda tahu biaya renovasi rumah Bali, kantor Bali, atau booth pameran Bali sejak awal.
               </p>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="mx-auto mt-20 max-w-6xl px-6 lg:px-8">
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-10 shadow-xl">
+          <div className="space-y-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-600">Mengapa pilih</p>
+            <h2 className="text-3xl font-semibold text-slate-900">Mengapa pilih kontraktor interior Bali PrimaSpace</h2>
+            <p className="max-w-3xl text-base leading-7 text-slate-600">
+              PrimaSpace adalah kontraktor interior Bali yang memiliki pengalaman luas di Denpasar, Badung, Ubud, dan Canggu. Kami memahami karakter iklim tropis Bali, menggunakan material lokal yang tahan lembap, dan menjaga kontrol lapangan Bali untuk hasil finishing interior yang rapi.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="rounded-3xl bg-slate-50 p-6 shadow-sm border border-slate-200">
+                <p className="text-lg font-semibold text-slate-900">Pengalaman wilayah Bali</p>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  Proyek kami mencakup Denpasar, Badung, Ubud, dan Canggu, sehingga kami tahu bagaimana menyesuaikan desain interior dengan kondisi lokal.
+                </p>
+              </div>
+              <div className="rounded-3xl bg-slate-50 p-6 shadow-sm border border-slate-200">
+                <p className="text-lg font-semibold text-slate-900">Jaminan kualitas lokal</p>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  Setiap proyek kontraktor interior Bali kami diawasi oleh tim profesional dan memenuhi standar kualitas finishing serta ketahanan material Bali.
+                </p>
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="rounded-3xl bg-slate-100 p-5 text-slate-900 border border-slate-200">
+                <p className="font-semibold">Interior Rumah Bali</p>
+              </div>
+              <div className="rounded-3xl bg-slate-100 p-5 text-slate-900 border border-slate-200">
+                <p className="font-semibold">Interior Kantor Bali</p>
+              </div>
+              <div className="rounded-3xl bg-slate-100 p-5 text-slate-900 border border-slate-200">
+                <p className="font-semibold">Interior Villa Bali</p>
+              </div>
+              <div className="rounded-3xl bg-slate-100 p-5 text-slate-900 border border-slate-200">
+                <p className="font-semibold">Booth Pameran Bali</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

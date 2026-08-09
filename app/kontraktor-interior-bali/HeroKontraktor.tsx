@@ -1,37 +1,19 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion, Variants } from "framer-motion";
-import { ArrowUpRight, HardHat, ArrowLeft, MessageCircle } from "lucide-react";
+import { ArrowUpRight, ArrowLeft, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
 export default function HeroContractor() {
   // Deklarasi varian dengan tipe Variants eksplisit untuk menghindari error ease array
   const fadeInUp: Variants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
-    },
-  };
-
-  const staggerContainer: Variants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.12,
-      },
-    },
-  };
-
-  const scaleUp: Variants = {
-    hidden: { scale: 1.05, opacity: 0 },
-    visible: { 
-      scale: 1, 
-      opacity: 1, 
-      transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } 
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeOut' },
     },
   };
 
@@ -46,66 +28,63 @@ export default function HeroContractor() {
         {/* KONTEN TEKS */}
         <motion.div 
           className="lg:col-span-7"
-          variants={staggerContainer}
+          variants={fadeInUp}
           initial="hidden"
           animate="visible"
         >
-          <motion.div variants={fadeInUp} className="flex items-center gap-3 mb-8">
+          <div className="flex items-center gap-3 mb-8">
             <span className="bg-[#c9a063]/15 text-[#c9a063] text-[10px] uppercase tracking-[0.4em] font-bold py-2 px-4 rounded-md border border-[#c9a063]/30">
               Kontraktor Interior Bali
             </span>
-          </motion.div>
+          </div>
 
-          <motion.h1 
-            variants={fadeInUp} 
-            className="text-4xl md:text-6xl font-light leading-[1.15] mb-8"
-          >
-            Kontraktor Interior Denpasar <br />
-            <span className="font-serif italic text-[#c9a063]">Kantor, Ruko, Villa, Hotel & Retail</span>
-          </motion.h1>
+          <h1 className="text-4xl md:text-6xl font-light leading-[1.15] mb-8">
+            Kontraktor Interior Bali <br />
+            <span className="font-serif italic text-[#c9a063]">Denpasar, Villa, Rumah, Kantor, Retail & Booth Pameran</span>
+          </h1>
 
-          <motion.p 
-            variants={fadeInUp} 
-            className="text-neutral-400 text-lg font-light leading-relaxed max-w-2xl mb-12"
-          >
-            Sebagai kontraktor interior Bali, PrimaSpace menyediakan pengerjaan interior lengkap mulai dari renovasi rumah, pembangunan interior kantor, hingga booth pameran yang menarik. Kami memastikan setiap detail konstruksi solid dan estetis.
-          </motion.p>
+          <p className="text-neutral-400 text-lg font-light leading-relaxed max-w-2xl mb-12">
+            Sebagai kontraktor interior Bali dan kontraktor interior Denpasar, PrimaSpace menyediakan pengerjaan interior lengkap mulai dari renovasi rumah, pembangunan interior kantor, hingga booth pameran yang menarik. Kami adalah kontraktor interior rumah Bali yang mengutamakan desain estetis, kekuatan konstruksi, dan ketepatan pemasangan.
+          </p>
 
           {/* Tombol Aksi (CTA) */}
-          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <Link 
-              href="https://wa.me/628135979589?text=Halo%20Prima%20Space,%20Saya%20Mau%20Konsultasi%20tentang%20..." 
+              href="https://wa.me/628135979589?text=Halo%20Prima%20Space,%20Saya%20Mau%20Konsultasi%20Kontraktor%20Interior%20Bali" 
               target="_blank"
               className="group relative flex items-center justify-center gap-3 bg-[#c9a063] hover:bg-[#b08951] text-neutral-900 font-medium px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-[#c9a063]/10"
             >
               <MessageCircle size={18} className="fill-current" />
-              <span>Konsultasi WhatsApp</span>
+              <span>Konsultasi Kontraktor Interior Bali</span>
               <ArrowUpRight size={16} className="opacity-60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
 
             <Link 
-              href="/" 
+              href="https://wa.me/628135979589?text=Halo%20Prima%20Space,%20Saya%20Ingin%20Minta%20Estimasi%20RAB%20Interior%20Bali" 
+              target="_blank"
               className="flex items-center justify-center gap-2 bg-transparent hover:bg-white/5 text-white border border-neutral-800 hover:border-neutral-700 font-medium px-6 py-4 rounded-xl transition-all duration-300"
             >
               <ArrowLeft size={16} className="text-neutral-400" />
-              <span>Kembali ke Beranda</span>
+              <span>Minta Estimasi RAB Interior Bali</span>
             </Link>
-          </motion.div>
+          </div>
         </motion.div>
 
         {/* VISUAL SHOWCASE */}
         <motion.div 
           className="lg:col-span-5 relative"
-          variants={scaleUp}
+          variants={fadeInUp}
           initial="hidden"
           animate="visible"
         >
           <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-[#161616] p-4 shadow-2xl">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden group">
-              <img 
-                src="https://images.unsplash.com/photo-1604328702728-d26d2062c20b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                alt="Construction Work" 
-                className="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
+              <Image
+                src="https://images.unsplash.com/photo-1604328702728-d26d2062c20b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Construction Work"
+                fill
+                sizes="(max-width: 768px) 100vw, 420px"
+                className="object-cover grayscale-[40%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-80" />
               
