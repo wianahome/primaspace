@@ -85,7 +85,7 @@ export function HeroKontraktor() {
           <div className="relative group p-4 bg-[#121212] border border-white/5 rounded-[40px] shadow-2xl">
             <div className="relative aspect-[4/5] rounded-[30px] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1170&auto=format&fit=crop"
+                src="https://res.cloudinary.com/dlerwn8af/image/upload/v1786241904/villa_image_s6akml.jpg"
                 alt="Proyek Konstruksi Kontraktor Bali"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

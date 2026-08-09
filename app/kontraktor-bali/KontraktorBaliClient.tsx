@@ -25,37 +25,37 @@ const projectGallery = [
 
 const projectProgressGallery = [
   {
-    src: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=1170&auto=format&fit=crop',
+    src: 'https://res.cloudinary.com/dlerwn8af/image/upload/v1786241581/struktur_pondasi_yxjden.webp',
     alt: 'Progress pondasi konstruksi villa Bali',
     title: 'Pondasi & Struktur',
     caption: 'Foto pengerjaan pondasi dan struktur awal proyek villa di Bali.',
   },
   {
-    src: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1170&auto=format&fit=crop',
+    src: 'https://res.cloudinary.com/dlerwn8af/image/upload/v1786241330/rangka-baja-ringannn_qv7zte.jpg',
     alt: 'Pekerja sedang memasang rangka atap dan dinding bangunan',
     title: 'Pemasangan Rangka',
     caption: 'Tahap pemasangan rangka atap dan kolom beton untuk konstruksi yang kuat.',
   },
   {
-    src: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1170&auto=format&fit=crop',
+    src: 'https://res.cloudinary.com/dlerwn8af/image/upload/v1786241330/proses_pengecoran_kdob7u.jpg',
     alt: 'Pengecoran beton dan pengecekan lokasi proyek',
     title: 'Proses Pengecoran',
     caption: 'Aktivitas pengecoran beton dan inspeksi lapangan dalam proyek konstruksi.',
   },
   {
-    src: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1170&auto=format&fit=crop',
+    src: 'https://res.cloudinary.com/dlerwn8af/image/upload/v1786241150/koordinasi_tim_lapangan_njlvip.png',
     alt: 'Tim kontraktor memeriksa rancangan dan progres bahan bangunan',
     title: 'Koordinasi Lapangan',
     caption: 'Foto tim lapangan sedang mengecek progres dan bahan bangunan.',
   },
   {
-    src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1170&auto=format&fit=crop',
+    src: 'https://res.cloudinary.com/dlerwn8af/image/upload/v1786241329/interior_project_ho6nb8.webp',
     alt: 'Finishing interior proyek konstruksi rumah di Bali',
     title: 'Finishing Interior',
     caption: 'Pengerjaan finishing interior, termasuk pemasangan lantai dan detail interior.',
   },
   {
-    src: 'https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?q=80&w=1170&auto=format&fit=crop',
+    src: 'https://res.cloudinary.com/dlerwn8af/image/upload/v1786241328/dokumentasi_project_gxxwig.jpg',
     alt: 'Staf konstruksi memotret progress kerja bangunan',
     title: 'Dokumentasi Proyek',
     caption: 'Dokumentasi foto progres sebagai bukti kerja dan update proyek.',
