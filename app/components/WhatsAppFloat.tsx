@@ -12,6 +12,10 @@ export function WhatsAppFloat() {
   else if (pathname.startsWith('/kontraktor-kolam-renang-bali')) serviceLabel = 'Kontraktor Kolam Renang Bali';
   else if (pathname.startsWith('/kitchen-set-bali') || pathname.startsWith('/kitchen-set')) serviceLabel = 'Kitchen Set Custom Bali';
   else if (pathname.startsWith('/booth-pameran-bali')) serviceLabel = 'Booth Pameran Bali';
+  else if (pathname.startsWith('/kanopi-bali')) serviceLabel = 'Kanopi Bali';
+  else if (pathname.startsWith('/acp-bali')) serviceLabel = 'ACP Bali';
+  else if (pathname.startsWith('/alumunium-bali')) serviceLabel = 'Alumunium Bali';
+  else if (pathname.startsWith('/neonbox-bali')) serviceLabel = 'Neon Box Bali';
 
   const defaultMessage = `Halo PrimaSpace, saya tertarik dengan ${serviceLabel}. Bisa dapat info estimasi dan RAB?`;
   const waHref = `https://wa.me/628135979589?text=${encodeURIComponent(defaultMessage)}`;
