@@ -60,6 +60,10 @@ export default function Footer() {
                 { name: 'Kontraktor Interior', href: '/kontraktor-interior-bali' },
                 { name: 'Custom Kitchen Set', href: '/kitchen-set-bali' },
                 { name: 'Booth Pameran', href: '/booth-pameran-bali' },
+                { name: 'Kanopi Bali', href: '/kanopi-bali' },
+                { name: 'ACP Bali', href: '/acp-bali' },
+                { name: 'Alumunium Bali', href: '/alumunium-bali' },
+                { name: 'Neon Box Bali', href: '/neonbox-bali' },
               ].map((service, idx) => (
                 <li key={idx}>
                   <Link 
