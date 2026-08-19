@@ -1,8 +1,12 @@
 import type { MetadataRoute } from 'next';
+import { supabase } from './utils/supabase'; // Pastikan path utilitas Supabase benar
+
+export const revalidate = 0; // Set 0 agar sitemap selalu mengambil data terbaru saat di-refresh
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://primaspace.id';
 
+  // 1. Rute Statis
   const staticRoutes = [
     '',
     '/jasa-arsitek-bali',
@@ -20,19 +24,34 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/blog',
   ];
 
-  const staticUrls = staticRoutes.map((route) => ({
+  const staticUrls: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: route === '' ? 1.0 : 0.8,
   }));
 
-  // Load blog article data to include published posts
-  const { blogArticles } = await import('./blog/blog-articles-data');
-  const blogUrls = (blogArticles || [])
-    .filter((a) => a.isPublished)
-    .map((a) => ({
-      url: `${baseUrl}/blog/${a.slug}`,
-      lastModified: new Date(a.publishDate).toISOString(),
-    }));
+  // 2. Fetch Artikel Dinamis dari Supabase (Opsi A: Hanya select 'slug')
+  let blogUrls: MetadataRoute.Sitemap = [];
+
+  try {
+    const { data: blogArticles, error } = await supabase
+      .from('psp_articles')
+      .select('slug'); // Hanya mengambil slug agar tidak error akibat kolom created_at yang absen
+
+    if (error) {
+      console.error('Error fetching sitemap articles:', error.message);
+    } else if (blogArticles && blogArticles.length > 0) {
+      blogUrls = blogArticles.map((article) => ({
+        url: `${baseUrl}/blog/${article.slug}`,
+        lastModified: new Date(), // Menggunakan tanggal saat ini sebagai fallback
+        changeFrequency: 'monthly',
+        priority: 0.6,
+      }));
+    }
+  } catch (err) {
+    console.error('Sitemap fetch failed:', err);
+  }
 
   return [...staticUrls, ...blogUrls];
 }
