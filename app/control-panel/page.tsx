@@ -1,197 +1,164 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { supabase } from '../utils/supabase';
-
-
-const CATEGORIES = ['arsitek', 'kontraktor', 'desain-interior', 'kanopi', 'kitchen-set', 'acp', 'alumunium'];
+import { useState } from 'react';
 
 export default function ControlPanelPage() {
-  const [imageUrl, setImageUrl] = useState('');
-  const [imageAlt, setImageAlt] = useState('');
-  const [imageCategory, setImageCategory] = useState('kanopi');
-  const [mediaList, setMediaList] = useState<any[]>([]);
-
-  const [keyword, setKeyword] = useState('');
-  const [articleCategory, setArticleCategory] = useState('kanopi');
-  const [selectedMediaId, setSelectedMediaId] = useState<string>('');
+  const [keywordsText, setKeywordsText] = useState('');
+  const [category, setCategory] = useState('kontraktor');
   const [loading, setLoading] = useState(false);
-  const [generatedArticle, setGeneratedArticle] = useState<any>(null);
+  const [logs, setLogs] = useState<string[]>([]);
+  const [progress, setProgress] = useState({ current: 0, total: 0 });
 
-  useEffect(() => {
-    fetchMedia();
-  }, [articleCategory]);
+  const CATEGORIES = [
+    { label: 'Kontraktor', value: 'kontraktor' },
+    { label: 'Arsitek', value: 'arsitek' },
+    { label: 'Desain Interior', value: 'desain-interior' },
+    { label: 'Kanopi', value: 'kanopi' },
+    { label: 'Kitchen Set', value: 'kitchen-set' },
+    { label: 'ACP', value: 'acp' },
+    { label: 'Alumunium', value: 'alumunium' },
+  ];
 
-  const fetchMedia = async () => {
-    const { data } = await supabase.from('psp_media').select('*').eq('category', articleCategory);
-    setMediaList(data || []);
-  };
-
-  const handleAddMedia = async (e: React.FormEvent) => {
+  const handleBulkGenerate = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!imageUrl || !imageAlt) return alert('Lengkapi data media');
 
-    const { error } = await supabase.from('psp_media').insert({
-      url: imageUrl,
-      alt_text: imageAlt,
-      category: imageCategory,
-    });
+    // Split keyword berdasarkan baris baru
+    const keywordList = keywordsText
+      .split('\n')
+      .map((k) => k.trim())
+      .filter((k) => k.length > 0);
 
-    if (!error) {
-      setImageUrl('');
-      setImageAlt('');
-      fetchMedia();
-      alert('Media berhasil disimpan ke psp_media!');
-    } else {
-      alert('Gagal menyimpan media: ' + error.message);
+    if (keywordList.length === 0) {
+      alert('Masukkan minimal 1 keyword!');
+      return;
     }
-  };
 
-  const handleGenerateArticle = async () => {
-    if (!keyword) return alert('Masukkan keyword terlebih dahulu');
     setLoading(true);
-    setGeneratedArticle(null);
+    setLogs([]);
+    setProgress({ current: 0, total: keywordList.length });
 
     try {
-      const res = await fetch('/api/admin/generate', {
+      // Mengirim keyword ke API Bulk Generator
+      const response = await fetch('/api/admin/generate-bulk', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
-          keyword,
-          category: articleCategory,
-          selectedMediaId: selectedMediaId || null,
+          keywords: keywordList,
+          category: category,
         }),
       });
 
-      const data = await res.json();
-      setLoading(false);
+      const result = await response.json();
 
-      if (data.success) {
-        setGeneratedArticle(data.data);
-        alert('Artikel berhasil dibuat dan diterbitkan!');
+      if (result.success) {
+        setLogs((prev) => [
+          ...prev,
+          `✅ Berhasil memproses ${result.totalGenerated} artikel! Artikel telah dijadwalkan (5 post/hari).`,
+        ]);
+        setKeywordsText('');
       } else {
-        alert('Gagal: ' + (data.error || data.message));
+        setLogs((prev) => [...prev, `❌ Gagal: ${result.error || result.message}`]);
       }
     } catch (err: any) {
+      setLogs((prev) => [...prev, `❌ Error System: ${err.message}`]);
+    } finally {
       setLoading(false);
-      alert('Error koneksi API: ' + err.message);
     }
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-8 space-y-12">
-      <div className="border-b pb-4">
-        <h1 className="text-3xl font-bold">Primaspace Control Panel</h1>
-        <p className="text-sm text-gray-500">Engine Otomatisasi Artikel SEO & Media Manager</p>
-      </div>
+    <div className="min-h-screen bg-gray-100 py-10 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto space-y-8">
+        {/* HEADER */}
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
+          <h1 className="text-2xl font-bold text-gray-900">
+            PrimaSpace - AI Bulk Article Generator & Scheduler
+          </h1>
+          <p className="text-gray-500 text-sm mt-1">
+            Input hingga 200 keyword. Sistem akan men-generate konten via AI dan menjadwalkannya secara otomatis 5 post per hari di Supabase.
+          </p>
+        </div>
 
-      {/* SECTION 1: MEDIA MANAGER */}
-      <section className="bg-gray-50 p-6 rounded-xl border">
-        <h2 className="text-xl font-semibold mb-4">1. Media Manager (Tabel: psp_media)</h2>
-        <form onSubmit={handleAddMedia} className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <input
-            type="url"
-            placeholder="URL Gambar (https://...)"
-            value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
-            className="p-2 border rounded"
-            required
-          />
-          <input
-            type="text"
-            placeholder="Alt Text (SEO)"
-            value={imageAlt}
-            onChange={(e) => setImageAlt(e.target.value)}
-            className="p-2 border rounded"
-            required
-          />
-          <select
-            value={imageCategory}
-            onChange={(e) => setImageCategory(e.target.value)}
-            className="p-2 border rounded"
-          >
-            {CATEGORIES.map((cat) => (
-              <option key={cat} value={cat}>{cat}</option>
-            ))}
-          </select>
-          <button type="submit" className="bg-green-600 text-white font-medium p-2 rounded hover:bg-green-700">
-            Simpan Gambar
-          </button>
-        </form>
-      </section>
-
-      {/* SECTION 2: AI GENERATOR */}
-      <section className="bg-white p-6 rounded-xl border shadow-sm space-y-6">
-        <h2 className="text-xl font-semibold">2. Generate Artikel AI (Tabel: psp_articles)</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* FORM BULK GENERATE */}
+        <form onSubmit={handleBulkGenerate} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 space-y-6">
+          {/* PILIH KATEGORI */}
           <div>
-            <label className="block text-sm font-medium mb-1">Target Keyword</label>
-            <input
-              type="text"
-              placeholder="Contoh: kontraktor villa canggu bali"
-              value={keyword}
-              onChange={(e) => setKeyword(e.target.value)}
-              className="w-full p-2 border rounded"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium mb-1">Kategori Jasa</label>
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
+              Kategori Artikel
+            </label>
             <select
-              value={articleCategory}
-              onChange={(e) => setArticleCategory(e.target.value)}
-              className="w-full p-2 border rounded"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm"
+              disabled={loading}
             >
               {CATEGORIES.map((cat) => (
-                <option key={cat} value={cat}>{cat}</option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium mb-1">Pilih Featured Image</label>
-            <select
-              value={selectedMediaId}
-              onChange={(e) => setSelectedMediaId(e.target.value)}
-              className="w-full p-2 border rounded"
-            >
-              <option value="">🔀 Acak oleh AI (Random)</option>
-              {mediaList.map((m) => (
-                <option key={m.id} value={m.id}>
-                  {m.alt_text}
+                <option key={cat.value} value={cat.value}>
+                  {cat.label}
                 </option>
               ))}
             </select>
           </div>
-        </div>
 
-        <button
-          onClick={handleGenerateArticle}
-          disabled={loading}
-          className="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 disabled:opacity-50"
-        >
-          {loading ? 'AI Memproses & Menyimpan Artikel...' : '🚀 Generate & Publish Artikel'}
-        </button>
-      </section>
-
-      {/* PREVIEW HASIL */}
-      {generatedArticle && (
-        <section className="border p-6 rounded-xl bg-gray-50 space-y-4">
-          <span className="bg-green-100 text-green-800 text-xs px-2.5 py-0.5 rounded font-bold uppercase">
-            Terbit di psp_articles
-          </span>
-          <h2 className="text-2xl font-bold">{generatedArticle.title}</h2>
-          {generatedArticle.featured_image_url && (
-            <img
-              src={generatedArticle.featured_image_url}
-              alt={generatedArticle.featured_image_alt}
-              className="w-full h-64 object-cover rounded-lg"
+          {/* TEXTAREA KEYWORD BULK */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-2">
+              Daftar Keyword (1 Keyword Per Baris)
+            </label>
+            <textarea
+              rows={10}
+              value={keywordsText}
+              onChange={(e) => setKeywordsText(e.target.value)}
+              placeholder={`jasa kontraktor bali\nbiaya pembuatan kanopi bali\nkitchen set minimalis denpasar\nrenovasi villa seminyak`}
+              className="w-full p-4 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm font-mono leading-relaxed"
+              disabled={loading}
             />
-          )}
-          <p className="text-gray-600 italic">{generatedArticle.excerpt}</p>
-        </section>
-      )}
+            <p className="text-xs text-gray-400 mt-2">
+              Jumlah keyword terdeteksi:{' '}
+              <span className="font-bold text-blue-600">
+                {keywordsText.split('\n').filter((k) => k.trim().length > 0).length}
+              </span>
+            </p>
+          </div>
+
+          {/* SUBMIT BUTTON */}
+          <button
+            type="submit"
+            disabled={loading}
+            className={`w-full py-3.5 px-6 rounded-xl font-bold text-white transition-all shadow-md ${
+              loading
+                ? 'bg-gray-400 cursor-not-allowed'
+                : 'bg-blue-600 hover:bg-blue-700 active:scale-[0.99]'
+            }`}
+          >
+            {loading ? 'Sedang Memproses AI & Menjadwalkan...' : 'Generate & Jadwalkan Artikel (5 Post/Hari)'}
+          </button>
+        </form>
+
+        {/* LOGS & STATUS PROGRESS */}
+        {(loading || logs.length > 0) && (
+          <div className="bg-slate-900 text-slate-100 p-6 rounded-2xl shadow-md space-y-4 font-mono text-sm">
+            <h3 className="font-bold text-slate-300 border-b border-slate-700 pb-2">
+              System Console Log
+            </h3>
+
+            {loading && (
+              <div className="flex items-center space-x-3 text-blue-400 animate-pulse">
+                <div className="w-3 h-3 bg-blue-500 rounded-full animate-ping"></div>
+                <span>AI sedang men-generate artikel dan mengatur tanggal rilis di Supabase...</span>
+              </div>
+            )}
+
+            <div className="space-y-1 max-h-60 overflow-y-auto text-xs text-slate-300">
+              {logs.map((log, index) => (
+                <div key={index}>{log}</div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

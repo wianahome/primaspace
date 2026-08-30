@@ -7,17 +7,17 @@ import { Breadcrumb } from '../components/Breadcrumb';
 
 const boothGallery = [
   {
-    src: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1000&q=80',
+    src: 'https://res.cloudinary.com/dlerwn8af/image/upload/v1788098774/booth-bali-2_hfmucd.webp',
     alt: 'Booth pameran modern dengan branding dan pencahayaan',
     title: 'Booth Pameran Modern',
   },
   {
-    src: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1000&q=80',
+    src: 'https://res.cloudinary.com/dlerwn8af/image/upload/v1788098774/booth-bali-3_ng3wm0.jpg',
     alt: 'Desain booth pameran Bali dengan detail kayu dan aksen tropis',
     title: 'Booth Bali Tropis',
   },
   {
-    src: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1000&q=80',
+    src: 'https://res.cloudinary.com/dlerwn8af/image/upload/v1788098776/booth-bali-1_es3w3o.jpg',
     alt: 'Booth pameran Denpasar dengan tampilan profesional',
     title: 'Booth Event Denpasar',
   },

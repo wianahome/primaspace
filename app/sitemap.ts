@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { supabase } from './utils/supabase'; // Pastikan path utilitas Supabase benar
 
-export const revalidate = 0; // Set 0 agar sitemap selalu mengambil data terbaru saat di-refresh
+export const revalidate = 0; // Set 0 agar sitemap selalu mengambil data terbaru secara realtime
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://primaspace.id';
@@ -31,20 +31,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route === '' ? 1.0 : 0.8,
   }));
 
-  // 2. Fetch Artikel Dinamis dari Supabase (Opsi A: Hanya select 'slug')
+  // 2. Fetch Artikel Dinamis dari Supabase (Dengan Filter Penjadwalan)
   let blogUrls: MetadataRoute.Sitemap = [];
 
   try {
+    const nowIso = new Date().toISOString();
+
     const { data: blogArticles, error } = await supabase
       .from('psp_articles')
-      .select('slug'); // Hanya mengambil slug agar tidak error akibat kolom created_at yang absen
+      .select('slug, published_at')
+      .or('is_published.eq.true,is_published.is.null') // Menampilkan yang dipublish
+      .lte('published_at', nowIso); // HANYA AMBIL ARTIKEL YANG SUDAH TERBIT (<= JAM SEKARANG)
 
     if (error) {
       console.error('Error fetching sitemap articles:', error.message);
     } else if (blogArticles && blogArticles.length > 0) {
       blogUrls = blogArticles.map((article) => ({
         url: `${baseUrl}/blog/${article.slug}`,
-        lastModified: new Date(), // Menggunakan tanggal saat ini sebagai fallback
+        // Menggunakan tanggal terbit artikel sebagai lastModified agar disukai Google
+        lastModified: article.published_at ? new Date(article.published_at) : new Date(),
         changeFrequency: 'monthly',
         priority: 0.6,
       }));

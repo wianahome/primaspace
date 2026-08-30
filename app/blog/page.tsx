@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { supabase } from '../utils/supabase'; // Sesuaikan lokasi utils/supabase Anda
+import { supabase } from '../utils/supabase';
 
 export const revalidate = 0; // Memastikan daftar artikel selalu update realtime
 
@@ -17,7 +17,7 @@ export async function generateMetadata() {
 export default async function BlogPage({ searchParams }: BlogPageProps) {
   const { category, q } = await searchParams;
 
-  // 1. Fetch Kategori Unik dari Database
+  // Kategori Unik
   const CATEGORIES = [
     { label: 'Semua', value: '' },
     { label: 'Arsitek', value: 'arsitek' },
@@ -29,12 +29,15 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     { label: 'Alumunium', value: 'alumunium' },
   ];
 
-  // Query dasar tanpa filter is_published strict jika data belum diset
-let query = supabase
-  .from('psp_articles')
-  .select('*')
-  .or('is_published.eq.true,is_published.is.null') // Menampilkan yang true atau null
-  .order('id', { ascending: false }); // Menggunakan id karena created_at mungkin belum ada
+  const nowIso = new Date().toISOString();
+
+  // Query Supabase dengan filter penjadwalan (drip-feed)
+  let query = supabase
+    .from('psp_articles')
+    .select('*')
+    .or('is_published.eq.true,is_published.is.null') // Menampilkan yang dipublish
+    .lte('published_at', nowIso) // Hanya menampilkan artikel yang tanggal rilisnya <= jam sekarang
+    .order('published_at', { ascending: false }); // Urutkan dari yang paling baru dirilis
 
   if (category) {
     query = query.eq('category', category);
@@ -51,7 +54,7 @@ let query = supabase
   }
 
   const articleList = articles || [];
-  const featuredArticle = articleList[0]; // Artikel paling baru sebagai Headline
+  const featuredArticle = articleList[0]; // Artikel terbaru sebagai Headline
   const regularArticles = articleList.slice(1); // Artikel sisa untuk Grid
 
   return (
@@ -95,6 +98,7 @@ let query = supabase
 
           {/* Input Pencarian */}
           <form method="GET" action="/blog" className="w-full md:w-72">
+            {category && <input type="hidden" name="category" value={category} />}
             <input
               type="text"
               name="q"
@@ -129,7 +133,7 @@ let query = supabase
                   {featuredArticle.excerpt}
                 </p>
                 <div className="pt-4 flex items-center justify-between text-xs text-gray-500 border-t">
-                  <span>Waktu baca: {featuredArticle.reading_time_minutes} menit</span>
+                  <span>Waktu baca: {featuredArticle.reading_time_minutes || 5} menit</span>
                   <Link
                     href={`/blog/${featuredArticle.slug}`}
                     className="font-bold text-blue-600 hover:underline flex items-center gap-1"
@@ -179,7 +183,7 @@ let query = supabase
                     </div>
 
                     <div className="pt-4 border-t flex items-center justify-between text-xs text-gray-500">
-                      <span>{article.reading_time_minutes} min read</span>
+                      <span>{article.reading_time_minutes || 5} min read</span>
                       <Link
                         href={`/blog/${article.slug}`}
                         className="text-blue-600 font-bold hover:underline"
