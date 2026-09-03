@@ -53,7 +53,7 @@ export function KitchenSetBaliClient() {
                   <span className="font-semibold">Estimasi mulai dari:</span>
                   <span className="font-bold">Rp 8.5 jt — Rp 20 jt</span>
                   <a
-                    href="https://wa.me/628135979589?text=Halo%20PrimaSpace%2C%20saya%20mau%20minta%20estimasi%20RAB%20untuk%20kitchen%20set%20Denpasar.%20Lokasi%3A%20Denpasar&utm_source=google&utm_campaign=KS-Bali"
+                    href="https://wa.me/6282114507599?text=Halo%20PrimaSpace%2C%20saya%20mau%20minta%20estimasi%20RAB%20untuk%20kitchen%20set%20Denpasar.%20Lokasi%3A%20Denpasar&utm_source=google&utm_campaign=KS-Bali"
                     target="_blank"
                     rel="noreferrer"
                     className="ml-4 inline-flex items-center gap-2 rounded-full bg-amber-600 px-3 py-1 text-xs font-semibold text-white hover:bg-amber-700 transition"

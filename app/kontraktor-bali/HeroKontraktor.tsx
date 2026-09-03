@@ -64,7 +64,7 @@ export function HeroKontraktor() {
 
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <Link 
-              href="https://wa.me/628135979589?text=Halo%20PrimaSpace,%20Saya%20Mau%20Konsultasi%20Konstruksi%20Bali%20untuk%20bangun%20villa%20atau%20renovasi%20rumah%20di%20Denpasar..." 
+              href="https://wa.me/6282114507599?text=Halo%20PrimaSpace,%20Saya%20Mau%20Konsultasi%20Konstruksi%20Bali%20untuk%20bangun%20villa%20atau%20renovasi%20rumah%20di%20Denpasar..." 
               target="_blank"
               className="group relative flex items-center justify-center gap-3 bg-[#c9a063] hover:bg-[#b08951] text-neutral-900 font-medium px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-[#c9a063]/10"
             >

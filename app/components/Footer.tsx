@@ -105,7 +105,7 @@ export default function Footer() {
                 </div>
                 <div className="space-y-1">
                   <p className="text-[10px] font-bold tracking-wider text-neutral-400 uppercase">Hubungi Kami</p>
-                  <p className="text-neutral-300 text-xs font-light">WhatsApp: <a href="https://wa.me/628135979589?text=Halo%20PrimaSpace,%20Saya%20ingin%20konsultasi" className="text-amber-300 hover:underline">+62 813-5979-589</a></p>
+                  <p className="text-neutral-300 text-xs font-light">WhatsApp: <a href="https://wa.me/6282114507599?text=Halo%20PrimaSpace,%20Saya%20ingin%20konsultasi" className="text-amber-300 hover:underline">+62 813-5979-589</a></p>
                   <p className="text-neutral-500 text-xs font-light">Email: <a href="mailto:hello@primaspace.com" className="hover:underline">hello@primaspace.com</a></p>
                 </div>
               </div>

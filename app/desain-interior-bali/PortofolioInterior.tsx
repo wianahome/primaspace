@@ -330,7 +330,7 @@ export function PortfolioInterior() {
                     <p className="text-sm font-bold text-[#c9a063]">Include 3D Render & Layout</p>
                   </div>
                   <a
-                    href={`https://wa.me/628135979589?text=Halo%20PrimaSpace,%20saya%20tertarik%20dengan%20konsep%20desain%20interior%20seperti%20${encodeURIComponent(selectedProject.title)}`}
+                    href={`https://wa.me/6282114507599?text=Halo%20PrimaSpace,%20saya%20tertarik%20dengan%20konsep%20desain%20interior%20seperti%20${encodeURIComponent(selectedProject.title)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-[#c9a063] hover:bg-[#b08e58] text-[#0a0a0a] px-6 py-3 rounded-xl text-xs font-bold tracking-wide transition-all shadow-lg"

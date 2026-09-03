@@ -79,7 +79,7 @@ export default function HeroKitchen() {
 
           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <Link
-              href="https://wa.me/628135979589?text=Halo%20PrimaSpace%2C%20saya%20mau%20konsultasi%20kitchen%20set%20Bali%20%28Denpasar%29%20untuk%20estimasi%20RAB%20dan%20survey%20lokasi"
+              href="https://wa.me/6282114507599?text=Halo%20PrimaSpace%2C%20saya%20mau%20konsultasi%20kitchen%20set%20Bali%20%28Denpasar%29%20untuk%20estimasi%20RAB%20dan%20survey%20lokasi"
               target="_blank"
               className="group relative flex items-center justify-center gap-3 bg-[#c9a063] hover:bg-[#b08951] text-neutral-900 font-medium px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-[#c9a063]/10"
             >

@@ -18,7 +18,7 @@ export function WhatsAppFloat() {
   else if (pathname.startsWith('/neonbox-bali')) serviceLabel = 'Neon Box Bali';
 
   const defaultMessage = `Halo PrimaSpace, saya tertarik dengan ${serviceLabel}. Bisa dapat info estimasi dan RAB?`;
-  const waHref = `https://wa.me/628135979589?text=${encodeURIComponent(defaultMessage)}`;
+  const waHref = `https://wa.me/6282114507599?text=${encodeURIComponent(defaultMessage)}`;
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">

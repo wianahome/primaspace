@@ -51,7 +51,7 @@ const structuredData = {
   description:
     'Jasa kontraktor bangunan, arsitek, dan renovasi rumah serta villa custom di Denpasar dan seluruh wilayah Bali.',
   url: 'https://primaspace.id/kontraktor-bali',
-  telephone: '+628135979589',
+  telephone: '+6282114507599',
   areaServed: ['Denpasar', 'Badung', 'Gianyar', 'Tabanan', 'Bali Utara', 'Ubud', 'Canggu'],
   serviceType: ['Pembangunan Villa Bali', 'Renovasi Rumah Bali', 'Kontraktor Denpasar', 'Jasa Konstruksi Bali'],
   provider: {

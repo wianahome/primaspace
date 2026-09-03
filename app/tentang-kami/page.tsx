@@ -197,7 +197,7 @@ export default function AboutPage() {
             </p>
             <div className="pt-4">
               <Link
-                href="https://wa.me/628135979589?text=Halo%20PrimaSpace,%20saya%20sudah%20membaca%20tentang%20kami%20dan%20ingin%20berkonsultasi%20proyek"
+                href="https://wa.me/6282114507599?text=Halo%20PrimaSpace,%20saya%20sudah%20membaca%20tentang%20kami%20dan%20ingin%20berkonsultasi%20proyek"
                 target="_blank"
                 className="inline-flex items-center gap-3 bg-[#c9a063] hover:bg-[#b08e58] text-[#0a0a0a] font-bold px-8 py-4 rounded-xl text-xs tracking-widest uppercase transition-all duration-300 shadow-xl shadow-[#c9a063]/5 group"
               >

@@ -276,7 +276,7 @@ export function PortfolioKitchenSet() {
         {/* CTA Section */}
         <div className="mt-20 text-center">
           <Link
-            href="https://wa.me/628135979589?text=Halo%20PrimaSpace,%20saya%20tertarik%20melihat%20portofolio%20kitchen%20set%20dan%20ingin%20konsultasi"
+            href="https://wa.me/6282114507599?text=Halo%20PrimaSpace,%20saya%20tertarik%20melihat%20portofolio%20kitchen%20set%20dan%20ingin%20konsultasi"
             target="_blank"
             className="inline-flex items-center gap-3 bg-[#c9a063] hover:bg-[#b08e58] text-[#0a0a0a] font-bold px-8 py-4 rounded-xl text-sm tracking-wide transition-all duration-300 shadow-xl shadow-[#c9a063]/5 group"
           >

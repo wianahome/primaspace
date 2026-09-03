@@ -78,7 +78,7 @@ export default function HeroHome() {
           {/* Group Tombol Aksi (CTA) */}
           <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
             <Link 
-              href="https://wa.me/628135979589?text=Halo%20Prima%20Space,%20Saya%20Mau%20Konsultasi%20tentang%20..." 
+              href="https://wa.me/6282114507599?text=Halo%20Prima%20Space,%20Saya%20Mau%20Konsultasi%20tentang%20..." 
               className="group flex items-center gap-3 bg-[#c9a063] hover:bg-[#b08e58] text-[#0a0a0a] font-bold px-8 py-5 rounded-2xl transition-all duration-500 shadow-xl shadow-[#c9a063]/10"
             >
               <ShieldCheck size={18} />

@@ -48,7 +48,7 @@ export default function Navbar() {
   else if (pathname.startsWith('/booth-pameran-bali')) serviceLabel = 'Booth Pameran Bali';
 
   const waMessage = `Halo PrimaSpace, saya ingin konsultasi tentang ${serviceLabel}. Bisa dapat info estimasi dan RAB?`;
-  const waHref = `https://wa.me/628135979589?text=${encodeURIComponent(waMessage)}`;
+  const waHref = `https://wa.me/6282114507599?text=${encodeURIComponent(waMessage)}`;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-md border-b border-white/5 h-20 flex items-center">

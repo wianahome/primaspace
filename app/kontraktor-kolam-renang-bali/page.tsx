@@ -53,7 +53,7 @@ const structuredData = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'PrimaSpace',
-    telephone: '+628135979589',
+    telephone: '+6282114507599',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Denpasar',
