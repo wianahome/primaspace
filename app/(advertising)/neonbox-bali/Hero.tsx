@@ -80,7 +80,7 @@ export default function Hero() {
           <div className="relative w-full max-w-md aspect-[4/5] rounded-3xl p-1 bg-gradient-to-b from-cyan-500/50 via-fuchsia-500/30 to-slate-900 shadow-[0_0_50px_rgba(192,38,211,0.25)]">
             <div className="relative w-full h-full rounded-[22px] overflow-hidden bg-slate-900">
               <Image
-                src="/hero-neon-box.jpg" // Ganti dengan path foto produk Anda
+                src="https://res.cloudinary.com/dlerwn8af/image/upload/v1788497574/neon-box-bali-1_e9sb48.jpg" // Ganti dengan path foto produk Anda
                 alt="Neon Box Custom Bali"
                 fill
                 priority

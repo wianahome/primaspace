@@ -22,7 +22,7 @@ const portfolioData: PortfolioItem[] = [
     category: 'kafe',
     categoryLabel: 'Kafe & Resto',
     location: 'Canggu, Bali',
-    image: '/portfolio/cafe-1.jpg',
+    image: 'https://res.cloudinary.com/dlerwn8af/image/upload/v1788497573/neon_box2_mtm4cs.jpg',
     specs: 'Akrilik 3mm + Lampu LED Samsung Waterproof',
   },
   {
@@ -31,7 +31,7 @@ const portfolioData: PortfolioItem[] = [
     category: 'villa',
     categoryLabel: 'Villa & Resort',
     location: 'Ubud, Bali',
-    image: '/portfolio/villa-1.jpg',
+    image: 'https://res.cloudinary.com/dlerwn8af/image/upload/v1788497572/huruf_timbul_1_dismr9.webp',
     specs: 'Stainless Titanium Gold + Backlit LED Warm White',
   },
   {
@@ -40,7 +40,7 @@ const portfolioData: PortfolioItem[] = [
     category: 'retail',
     categoryLabel: 'Toko & Retail',
     location: 'Seminyak, Bali',
-    image: '/portfolio/retail-1.jpg',
+    image: 'https://res.cloudinary.com/dlerwn8af/image/upload/v1788497573/neon_sign_fqa0j3.jpg',
     specs: 'Neon Flex Silicone 12V + Base Akrilik Bening 5mm',
   },
   {
@@ -49,7 +49,7 @@ const portfolioData: PortfolioItem[] = [
     category: 'club',
     categoryLabel: 'Club & Bar',
     location: 'Kuta, Bali',
-    image: '/portfolio/club-1.jpg',
+    image: 'https://res.cloudinary.com/dlerwn8af/image/upload/v1788498346/neon_sign_outdoor_b4vpoa.jpg',
     specs: 'Frame Aluminium Anti Karat + LED High Brightness',
   },
   {
@@ -58,7 +58,7 @@ const portfolioData: PortfolioItem[] = [
     category: 'kafe',
     categoryLabel: 'Kafe & Resto',
     location: 'Sanur, Bali',
-    image: '/portfolio/cafe-2.jpg',
+    image: 'https://res.cloudinary.com/dlerwn8af/image/upload/v1788497572/huruf_akrilik_dwfulg.jpg',
     specs: 'Cut Out Akrilik Presisi Laser + Module LED RGB',
   },
   {
@@ -67,7 +67,7 @@ const portfolioData: PortfolioItem[] = [
     category: 'villa',
     categoryLabel: 'Villa & Resort',
     location: 'Nusa Dua, Bali',
-    image: '/portfolio/villa-2.jpg',
+    image: 'https://res.cloudinary.com/dlerwn8af/image/upload/v1788497529/Gemini_Generated_Image_qq5xtzqq5xtzqq5x_q2vuar.jpg',
     specs: 'Galvanis Finishing Powder Coating Anti Korosi',
   },
 ];

@@ -140,7 +140,7 @@ export default function ACPBaliPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
-                  href="https://wa.me/628135979589?text=Halo%20saya%20ingin%20konsultasi%20pemasangan%20ACP%20di%20Bali"
+                  href="https://wa.me/6282114507599?text=Halo%20saya%20ingin%20konsultasi%20pemasangan%20ACP%20di%20Bali"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-center px-8 py-4 rounded-xl shadow-lg transition-all"
